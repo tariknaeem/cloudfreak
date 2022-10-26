@@ -23,7 +23,7 @@ pipeline {
            steps {
                script {         
                  def customImage = docker.build('initsixcloud/petclinic', "./docker")
-                 docker.withRegistry('https://registrytarik.azurecr.io', 'registrytarik') {
+                 docker.withRegistry('https://registrytarik.azurecr.io', 'acr-demo') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
            }
